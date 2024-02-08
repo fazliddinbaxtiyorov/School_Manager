@@ -1,4 +1,8 @@
-FROM ubuntu:latest
-LABEL authors="acer"
+FROM python:3.10
 
-ENTRYPOINT ["top", "-b"]
+WORKDIR /app
+
+COPY requirements.txt /app/
+RUN pip install --upgrade pip && pip install -r requirements.txt
+
+COPY . /app/
