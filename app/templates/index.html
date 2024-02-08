@@ -1,0 +1,154 @@
+{% load static %}
+<body>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="icon" type="image/x-icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Round_Landmark_School_Icon_-_Transparent.svg/1024px-Round_Landmark_School_Icon_-_Transparent.svg.png">
+<link rel="stylesheet" href="{% static 'style.css' %}">
+    <section id="one">
+        <nav id="nav">
+            <div class="nav-logo">
+                <div class="nav-heading">
+                    <span href="#"><i class="fas fa-paw logo white"></i>18-maktab</span>
+                </div>
+                <div class="hamburger">
+                    <a href="#"><i class="far fa-moon white "></i></a>
+                    <a href="#"><i class="fas fa-bars "></i></a>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">Asosiy</a></li>
+                <li><a href="#we">Biz Haqimizda</a></li>
+                <li><a href="{% url 'xizmatlar' %}">Xizmatlar</a></li>
+                <li><a href="#news">Yangiliklar</a></li>
+                <li><a href="{% url 'contact' %}">Bog'lanish</a></li>
+            </ul>
+        </nav>
+        <div class="content">
+            <div class="text-content">
+                <h1 class="white">Bizning Maktabimizga Xush Kelibsiz !<strong></strong></h1>
+                <div class="two-button">
+<!--                    <button class="w-btn btn">View Our Services</button>-->
+<!--                    <button class="t-btn btn">Hire Us</button>-->
+                </div>
+            </div>
+    </section>
+
+    <section id="one-half" class="goblack">
+        <span><img style="height:400px;weight:90%;" src="https://cra-ae.com/wp-content/uploads/2021/12/Seaforth-High-School-Front-Entrance.jpg" alt=""></span>
+        <div class="half-content">
+            <div class="half__text">
+                <h1 id="we">Biz Haqimizda</h1>
+                <p>Orci urna. In et augue ornare, tempor massa in, luctus sapien. Proin a diam et dui fermentum dolor
+                    molestie vel id neque. Donec sed tempus enim, a congue risus. Pellen tesqu.</p>
+            </div>
+            <div class="half__boxes">
+                <div class="box">
+                    <span href="#"><i class="fas fa-paw logo"></i></span>
+                    <h2>Our Mission</h2>
+                    <p>In a diam et dui elit, orci urna vel id neque. Donec sed tempus enims.</p>
+                </div>
+                <div class="box">
+                    <span href="#"><i class="fas fa-paw logo"></i></span>
+                    <h2>Our Vision</h2>
+                    <p>In a diam et dui elit, orci urna vel id neque. Donec sed tempus enims.</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section id="teach">
+        <div class="heading ">
+            <h1>Bizning O'qituvchilarimiz</h1>
+        </div>
+        <div class="container">
+            {% for i in teachers %}
+            <div class="info">
+                <span><img src="{{ i.photo.url }}" alt=""></span>
+                <div class="info__text">
+                    <h1>{{i.name}}</h1>
+                    <p>{{ i.education }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </section>
+    <section id="two">
+        <div class="heading ">
+            <h1 id="teacher">Bizning O'quvchilarimiz Yutuqlari</h1>
+        </div>
+        <div class="container">
+            {% for i in achivement %}
+            <div class="info">
+                <span><img src="{{ i.photo.url }}" alt=""></span>
+                <div class="info__text">
+                    <h1>{{i.title}}</h1>
+                    <p>{{i.text}}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </section>
+<!--    <section id="five" class="goblack">-->
+<!--        <div class="dog__image"><img style="background:cover;" src="https://static.vecteezy.com/system/resources/previews/022/484/550/original/kids-active-and-having-fun-playful-sports-activities-on-white-background-transparent-background-free-png.png" alt=""></div>-->
+<!--        <div class="dog__container">-->
+<!--            <div class="dog__boxes">-->
+<!--                <div class="dog__box">-->
+<!--                    <span><i class="fas fa-thumbs-up"></i></span>-->
+<!--                    <h4>Children</h4>-->
+<!--                    <p>Lorem ante ipsum primis in faucibus orci luctus eted ultrices posuere.</p>-->
+<!--                </div>-->
+<!--                <div class="dog__box">-->
+<!--                    <span><i class="fas fa-paw"></i></span>-->
+<!--                    <h4>Children</h4>-->
+<!--                    <p>Lorem ante ipsum primis in faucibus orci luctus eted ultrices posuere.</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="dog__boxes">-->
+<!--                <div class="dog__box">-->
+<!--                    <span><i class="fas fa-bullhorn"></i></span>-->
+<!--                    <h4>Children</h4>-->
+<!--                    <p>Lorem ante ipsum primis in faucibus orci luctus eted ultrices posuere.</p>-->
+<!--                </div>-->
+<!--                <div class="dog__box">-->
+<!--                    <span><i class="fas fa-cut"></i></span>-->
+<!--                    <h4>Children</h4>-->
+<!--                    <p>Lorem ante ipsum primis in faucibus orci luctus eted ultrices posuere.</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!---->
+<!--    </section>-->
+
+<!--    <section id="six">-->
+<!--        <h5>LOVERS</h5>-->
+<!--        <h1>Our Team Is Filled With Highly Dedicated Pet Lovers</h1>-->
+
+<!--        <button class="btn w-btn">Read More</button>-->
+
+<!--    </section>-->
+
+
+    <section id="seven" class="goblack">
+        <div class="heading ">
+            <h1 id="news">Maktab Yangiliklari</h1>
+        </div>
+        <div class="container container__bg goblack">
+            {% for i in news %}
+            <div class="info goblack">
+                <span><img src="{{ i.photo.url }}" alt=""></span>
+                <div class="info__text">
+                    <h1>{{i.title}}</h1>
+                </div>
+                <p style="text-align: start;padding: 10px;">{{i.text}}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</body>
+
